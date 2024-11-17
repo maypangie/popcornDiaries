@@ -1,0 +1,149 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ccc;
+}
+
+.star .checked {
+  color: #f39c12; /* Gold color for selected stars */
+}
+
+.star:hover,
+.star:hover ~ .star {
+  color: #f39c12;
+}
+
+
+
+/* Container for all movie cards 
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Individual movie card 
+.movie-card {
+  width: 200px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.star-rating {
+  margin: 10px 0;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.star.checked {
+  color: #f39c12;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+*/
+
+
+/* Container for both search results and favorite movies */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Individual movie card */
+.movie-card {
+  width: 200px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.star-rating {
+  margin: 10px 0;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.star.checked {
+  color: #f39c12;
+}
+
+.btn {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}

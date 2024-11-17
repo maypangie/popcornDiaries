@@ -1,68 +1,112 @@
-<!doctype html>
+
+<!doctype html> 
 <html>
 <head>
-    <title>21 Savage Fan Site</title>
+    <title>Movie Search & Favorites</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div class="container">
-
     <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <h1>POPCORN DIARIES</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
 
-    <div class="row">
+    <!-- Movie Search Section -->
+    <div class="search-section">
+        <h2>Search for a Movie</h2>
+        <input type="text" id="searchInput" class="form-control" placeholder="Enter movie title">
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+    </div>
 
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+    <!-- Search Results -->
+    <div class="search-results">
+        
+       <!--<div id="results" class="list-group"></div>-->
+    </div>
+    <div id="results"></div>
+    
 
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
 
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
 
-            </div>
-        </div>
-        <div class="col-sm-6">
-          <h3>Messages</h3>
-          <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-            <li class="message">
-              <span><%= messages[i].name %></span>
-              <span><%= messages[i].msg %></span>
-              <span><%= messages[i].thumbUp %></span>
-              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-            </li>
-          <% } %>
-          </ul>
+    <!-- User's Favorite Movies -->
+    <div class="favorites-section">
+        <h3>My Watchlist:</h3>
+       <!-- <% if (favorites && favorites.length > 0) { %>
+            <% favorites.forEach(function(movie) { %>
+                <div class="favorite-movie list-group-item">
+                  <!--<img src="<%= movie.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : 'https://via.placeholder.com/300x450?text=No+Image' %>" alt="<%= movie.title %>" style="width: 200px; height: auto; margin-bottom: 10px;"> 
+          
+                 
 
-          <h2>Add a message</h2>
-        <% if (user.local.email) { %>
-          <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
-            <input type="text" placeholder="message" name="msg">
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+                    <img src="<%= movie.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : 'https://via.placeholder.com/300x450?text=No+Image' %>" 
+                    alt="<%= movie.title %>" 
+                    style="width: 200px; height: auto; margin-bottom: 10px;">
+
+                    <h4><%= movie.title %></h4>
+                    <p>Rating: <%= movie.rating %></p>
+
+
+                
+                
+                    
+
+                        
+                        <!-- Star Rating System 
+                        <div class="star-rating">
+                            <% for (let i = 1; i <= 5; i++) { %>
+                                <span class="star" onclick="rateMovie('<%= movie._id %>', <%= i %>)">
+                                    <i class="fa fa-star <%= i <= movie.rating ? 'checked' : '' %>"></i>
+                                </span>
+                            <% } %>
+                        </div>
+                    
+
+                    <button onclick="deleteFavorite('<%= movie._id %>')" class="btn btn-danger">Delete</button>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>You have no favorite movies yet.</p>
         <% } %>
+    </div> -->
 
-</div>
 
-<script src="main.js"></script>
 
-</body>
-</html>
+
+    <div class="movies-container">
+        <% favorites.forEach(function(movie) { %>
+            <div class="movie-card">
+                <img src="<%= movie.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : 'https://via.placeholder.com/300x450?text=No+Image' %>" 
+                     alt="<%= movie.title %>" 
+                     class="movie-poster">
+                <h4><%= movie.title %></h4>
+                <p>Rating: <%= movie.rating %></p>
+                <div class="star-rating">
+                    <% for (let i = 1; i <= 5; i++) { %>
+                        <span class="star" onclick="rateMovie('<%= movie._id %>', <%= i %>)">
+                            <i class="fa fa-star <%= i <= movie.rating ? 'checked' : '' %>"></i>
+                        </span>
+                    <% } %>
+                </div>
+                <button onclick="deleteFavorite('<%= movie._id %>')" class="btn btn-danger">Delete</button>
+            </div>
+        <% }) %>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/js/main.js" defer></script>
