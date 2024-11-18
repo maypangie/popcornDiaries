@@ -1,9 +1,5 @@
 
 
-// orginal code above
-
-// new code below
-
 module.exports = function (app, passport, db) {
   const fetch = require('node-fetch');
   const Movie = require('./models/movie.js'); // MongoDB model for favorite movies
@@ -57,39 +53,7 @@ module.exports = function (app, passport, db) {
 });
 
 
-/*app.post('/favorites', isLoggedIn, async (req, res) => {
-    const { title, rating } = req.body;
-    const newFavorite = new Movie({ title, rating, userId: req.user._id });
 
-    try {
-        await newFavorite.save();
-        res.json({ message: 'Movie added to favorites' });
-    } catch (err) {
-        console.error('Error saving favorite:', err);
-        res.status(500).json({ error: 'Failed to add favorite' });
-    }
-}); */
-
-
-
-
-
-  // Add to favorites ============================================================
- 
- 
- /* app.post('/favorites', isLoggedIn, async (req, res) => {
-      const { title, rating } = req.body;
-      const newFavorite = new Movie({ title, rating, userId: req.user._id });
-      try {
-          await newFavorite.save();
-          res.json({ message: 'Movie added to favorites' });
-      } catch (err) {
-          console.error(err);
-          res.status(500).send('Error adding favorite');
-      }
-  });
-
-  */
   // Delete from favorites =======================================================
   app.delete('/favorites/:id', isLoggedIn, async (req, res) => {
     try {
@@ -101,7 +65,7 @@ module.exports = function (app, passport, db) {
     }
 });
 
-
+// Rate =======================================
 
 app.put('/favorites/rate/:id', isLoggedIn, async (req, res) => {
     const { rating } = req.body;
@@ -114,21 +78,9 @@ app.put('/favorites/rate/:id', isLoggedIn, async (req, res) => {
     }
 });
 
-/*app.post('/favorites', isLoggedIn, async (req, res) => {
-    const { title, posterPath, rating } = req.body;
-    const newFavorite = new Movie({ title, posterPath, rating, userId: req.user._id });
-
-    try {
-        await newFavorite.save();
-        res.json({ message: 'Movie added to favorites' });
-    } catch (err) {
-        console.error('Error saving favorite:', err);
-        res.status(500).send('Error adding favorite');
-    }
-});
-*/
 
 
+// Add to favorites ==============================================
 
 app.post('/favorites', isLoggedIn, async (req, res) => {
     const { title, posterPath, rating } = req.body;
@@ -148,20 +100,6 @@ app.post('/favorites', isLoggedIn, async (req, res) => {
         res.status(500).send('Error adding favorite');
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
