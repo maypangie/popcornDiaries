@@ -34,44 +34,7 @@
     <!-- User's Favorite Movies -->
     <div class="favorites-section">
         <h3>My Watchlist:</h3>
-       <!-- <% if (favorites && favorites.length > 0) { %>
-            <% favorites.forEach(function(movie) { %>
-                <div class="favorite-movie list-group-item">
-                  <!--<img src="<%= movie.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : 'https://via.placeholder.com/300x450?text=No+Image' %>" alt="<%= movie.title %>" style="width: 200px; height: auto; margin-bottom: 10px;"> 
-          
-                 
-
-                    <img src="<%= movie.posterPath ? `https://image.tmdb.org/t/p/w500${movie.posterPath}` : 'https://via.placeholder.com/300x450?text=No+Image' %>" 
-                    alt="<%= movie.title %>" 
-                    style="width: 200px; height: auto; margin-bottom: 10px;">
-
-                    <h4><%= movie.title %></h4>
-                    <p>Rating: <%= movie.rating %></p>
-
-
-                
-                
-                    
-
-                        
-                        <!-- Star Rating System 
-                        <div class="star-rating">
-                            <% for (let i = 1; i <= 5; i++) { %>
-                                <span class="star" onclick="rateMovie('<%= movie._id %>', <%= i %>)">
-                                    <i class="fa fa-star <%= i <= movie.rating ? 'checked' : '' %>"></i>
-                                </span>
-                            <% } %>
-                        </div>
-                    
-
-                    <button onclick="deleteFavorite('<%= movie._id %>')" class="btn btn-danger">Delete</button>
-                </div>
-            <% }) %>
-        <% } else { %>
-            <p>You have no favorite movies yet.</p>
-        <% } %>
-    </div> -->
-
+  
 
 
 
@@ -95,14 +58,6 @@
         <% }) %>
     </div>
     
-
-
-
-
-
-
-
-
 
 
 
