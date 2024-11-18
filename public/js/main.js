@@ -1,52 +1,4 @@
-/*var thumbUp = document.getElementsByClassName("fa-thumbs-up");
-var trash = document.getElementsByClassName("fa-trash");
 
-Array.from(thumbUp).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const name = this.parentNode.parentNode.childNodes[1].innerText
-        const msg = this.parentNode.parentNode.childNodes[3].innerText
-        const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
-        fetch('messages', {
-          method: 'put',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            'name': name,
-            'msg': msg,
-            'thumbUp':thumbUp
-          })
-        })
-        .then(response => {
-          if (response.ok) return response.json()
-        })
-        .then(data => {
-          console.log(data)
-          window.location.reload(true)
-        })
-      });
-});
-
-Array.from(trash).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const name = this.parentNode.parentNode.childNodes[1].innerText
-        const msg = this.parentNode.parentNode.childNodes[3].innerText
-        fetch('messages', {
-          method: 'delete',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            'name': name,
-            'msg': msg
-          })
-        }).then(function (response) {
-          window.location.reload()
-        })
-      });
-});
-*/
-
-//above is original code
-// below is new code
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchBtn = document.getElementById('searchBtn');
@@ -80,52 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/*function displayMovies(movies) {
-  const results = document.getElementById('results');
-  results.innerHTML = '';
 
-  if (movies.length === 0) {
-      results.innerHTML = '<p>No movies found</p>';
-      return;
-  }
-
-  movies.forEach(movie => {
-      const movieElement = document.createElement('div');
-      movieElement.classList.add('list-group-item');
-      movieElement.innerHTML = `
-          <h4>${movie.title}</h4>
-          <p>Release Date: ${movie.release_date || 'N/A'}</p>
-          <button onclick="addFavorite('${movie.title}')">Add to Favorites</button>
-      `;
-      results.appendChild(movieElement);
-  });
-}
-  */
-
-
-
-/*function displayMovies(movies) {
-  const results = document.getElementById('results');
-  results.innerHTML = '';
-
-  if (movies.length === 0) {
-      results.innerHTML = '<p>No movies found</p>';
-      return;
-  }
-
-  movies.forEach(movie => {
-      const posterUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/300x450?text=No+Image';
-      const movieElement = document.createElement('div');
-      movieElement.classList.add('list-group-item');
-      movieElement.innerHTML = `
-          <img src="${posterUrl}" alt="${movie.title}" style="width: 200px; height: auto; margin-bottom: 10px;">
-          <h4>${movie.title}</h4>
-          <p>Release Date: ${movie.release_date || 'N/A'}</p>
-          <button onclick="addFavorite('${movie.title}', '${movie.poster_path}')">Add to Favorites</button>
-      `;
-      results.appendChild(movieElement);
-  });
-} */
 
   function displayMovies(movies) {
     const results = document.getElementById('results');
@@ -190,13 +97,6 @@ async function addFavorite(title, posterPath) {
         alert('Error adding movie to favorites');
     }
 }
-
-
-
-
-
-
-
 
 
 
